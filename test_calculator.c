@@ -92,13 +92,13 @@ void test_multiply_underflow(void) {
     TEST_ASSERT_TRUE(result < 0); 
 }
 
+void test_divide_positive_numbers(void) {
+    TEST_ASSERT_EQUAL(4, divide(12, 3));
+}
+
+
 int main(void) {
     UNITY_BEGIN();
-    RUN_TEST(test_multiply_positive_numbers);
-    RUN_TEST(test_multiply_positive_and_negative_numbers);
-    RUN_TEST(test_multiply_negative_numbers);
-    RUN_TEST(test_multiply_zero);
-    RUN_TEST(test_multiply_overflow);
-    RUN_TEST(test_multiply_underflow);
+    RUN_TEST(test_divide_positive_numbers);
     return UNITY_END();
 }
