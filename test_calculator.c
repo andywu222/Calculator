@@ -69,8 +69,23 @@ void test_multiply_positive_numbers(void) {
     TEST_ASSERT_EQUAL(12, multiply(3, 4));
 }
 
+void test_multiply_positive_and_negative_numbers(void) {
+    TEST_ASSERT_EQUAL(-15, multiply(3, -5));
+}
+
+void test_multiply_negative_numbers(void) {
+    TEST_ASSERT_EQUAL(16, multiply(-4, -4));
+}
+
+void test_multiply_zero(void) {
+    TEST_ASSERT_EQUAL(0, multiply(10, 0)); 
+    TEST_ASSERT_EQUAL(0, multiply(0, 0));
+}
 int main(void) {
     UNITY_BEGIN();
     RUN_TEST(test_multiply_positive_numbers);
+    RUN_TEST(test_multiply_positive_and_negative_numbers);
+    RUN_TEST(test_multiply_negative_numbers);
+    RUN_TEST(test_multiply_zero);
     return UNITY_END();
 }
