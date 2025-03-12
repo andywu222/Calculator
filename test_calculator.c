@@ -96,9 +96,23 @@ void test_divide_positive_numbers(void) {
     TEST_ASSERT_EQUAL(4, divide(12, 3));
 }
 
+void test_divide_positive_and_negative_numbers(void) {
+    TEST_ASSERT_EQUAL(-5, divide(-15, 3));
+}
+
+void test_divide_negative_numbers(void) {
+    TEST_ASSERT_EQUAL(4, divide(-16, -4));
+}
+
+// void test_divide_zero(void) {
+//     TEST_ASSERT_EQUAL(0, divide(10, 0)); 
+// }
 
 int main(void) {
     UNITY_BEGIN();
     RUN_TEST(test_divide_positive_numbers);
+    RUN_TEST(test_divide_positive_and_negative_numbers);
+    RUN_TEST(test_divide_negative_numbers);
+    // RUN_TEST(test_divide_zero);
     return UNITY_END();
 }
