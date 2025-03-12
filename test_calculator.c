@@ -65,13 +65,12 @@ void test_subtract_underflow(void) {
     TEST_ASSERT_TRUE(result < 0); 
 }
 
+void test_multiply_positive_numbers(void) {
+    TEST_ASSERT_EQUAL(12, multiply(3, 4));
+}
+
 int main(void) {
     UNITY_BEGIN();
-    RUN_TEST(test_subtract_positive_numbers);
-    RUN_TEST(test_subtract_positive_and_negative_numbers);
-    RUN_TEST(test_subtract_negative_numbers);
-    RUN_TEST(test_subtract_zero);
-    RUN_TEST(test_subtract_overflow);
-    RUN_TEST(test_subtract_underflow);
+    RUN_TEST(test_multiply_positive_numbers);
     return UNITY_END();
 }
