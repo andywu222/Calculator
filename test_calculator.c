@@ -83,7 +83,7 @@ void test_multiply_zero(void) {
 }
 
 void test_multiply_overflow(void) {
-    int result = subtract(INT_MAX, 1); 
+    int result = multiply(INT_MAX, 1); 
     TEST_ASSERT_TRUE(result > 0); 
 }
 
@@ -108,11 +108,23 @@ void test_divide_negative_numbers(void) {
 //     TEST_ASSERT_EQUAL(0, divide(10, 0)); 
 // }
 
+void test_divide_overflow(void) {
+    int result = divide(INT_MAX, 1); 
+    TEST_ASSERT_TRUE(result > 0); 
+}
+
+void test_divide_underflow(void) {
+    int result = divide(INT_MAX, -1); 
+    TEST_ASSERT_TRUE(result < 0); 
+}
+
 int main(void) {
     UNITY_BEGIN();
     RUN_TEST(test_divide_positive_numbers);
     RUN_TEST(test_divide_positive_and_negative_numbers);
     RUN_TEST(test_divide_negative_numbers);
     // RUN_TEST(test_divide_zero);
+    RUN_TEST(test_divide_overflow);
+    RUN_TEST(test_divide_underflow);
     return UNITY_END();
 }
