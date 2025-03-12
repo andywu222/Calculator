@@ -41,8 +41,23 @@ void test_subtract_positive_numbers(void) {
     TEST_ASSERT_EQUAL(3, subtract(5, 2));
 }
 
+void test_subtract_positive_and_negative_numbers(void) {
+    TEST_ASSERT_EQUAL(13, subtract(9, -4));
+}
+
+void test_subtract_negative_numbers(void) {
+    TEST_ASSERT_EQUAL(1, subtract(-3, -4));
+}
+
+void test_subtract_zero(void) {
+    TEST_ASSERT_EQUAL(10, subtract(10, 0)); 
+    TEST_ASSERT_EQUAL(0, subtract(0, 0));
+}
 int main(void) {
     UNITY_BEGIN();
     RUN_TEST(test_subtract_positive_numbers);
+    RUN_TEST(test_subtract_positive_and_negative_numbers);
+    RUN_TEST(test_subtract_negative_numbers);
+    RUN_TEST(test_subtract_zero);
     return UNITY_END();
 }
